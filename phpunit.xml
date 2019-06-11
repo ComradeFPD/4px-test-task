@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false">
+    <testsuites>
+        <testsuite name="Unit">
+            <directory suffix="Test.php">./tests/Unit</directory>
+        </testsuite>
+
+        <testsuite name="Feature">
+            <directory suffix="Test.php">./tests/Feature</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./app</directory>
+        </whitelist>
+    </filter>
+    <php>
+            <env name="APP_ENV" value="testing"/>
+            <env name="APP_DEBUG" value="true"/>
+            <env name="BCRYPT_ROUNDS" value="4"/>
+            <env name="CACHE_DRIVER" value="array"/>
+            <env name="MAIL_DRIVER" value="smtp"/>
+            <env name="MAIL_HOST" value="smtp.mailtrap.io"/>
+            <env name="MAIL_PORT" value="2525"/>
+            <env name="MAIL_USERNAME" value="0b3bad7decc96a"/>
+            <env name="MAIL_PASSWORD" value="d21f7a0e097ae9"/>
+            <env name="MAIL_ENCRYPTION" value="null"/>
+            <env name="MAIL_FROM_ADDRESS" value="technical@antirabstvo.ru"/>
+            <env name="MAIL_FROM_NAME" value="Антирабство"/>
+            <env name="QUEUE_DRIVER" value="sync"/>
+            <env name="SESSION_DRIVER" value="array"/>
+            <env name="DB_CONNECTION" value="sqlite"/>
+            <env name="DB_DATABASE" value=":memory:"/>
+    </php>
+</phpunit>
